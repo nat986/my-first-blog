@@ -1,17 +1,19 @@
 {% extends 'feedback/base.html' %}
 
 {% block content %}
+    <a class="btn btn-default" href="/"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="btn btn-default" href="{% url 'feedback_edit' pk=feedback.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'feedback_remove' pk=feedback.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
     <div class="feedback">
-        <a class="btn btn-default" href="{% url 'feedback_edit' pk=feedback.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'feedback_remove' pk=feedback.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-        {% if feedback.published_date %}
+        <h2>{{ feedback.mentor_name }}</h2>
+         {% if feedback.published_date %}
             {{ feedback.published_date }}
         {% else %}
             <a class="btn btn-default" href="{% url 'feedback.views.post_publish' pk=feedback.pk %}">Publish</a>
         {% endif %}
-        <h1>{{ feedback.mentor_name }}</h1>
-        
-        <p>{{ feedback.text|linebreaks }}</p>
+        </div>
+    <div class="feedback">
+        <p><span class="notes">Feedback from Advisor:&nbsp;</span>{{ feedback.text|linebreaks }}</p>
         <p><span class="notes">Call notes:&nbsp;</span>{{ feedback.notes|linebreaks }}</p>
     </div>
 {% endblock %}
