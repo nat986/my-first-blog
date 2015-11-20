@@ -8,18 +8,14 @@
     <div>
     <h1><a href="">Springboard Feedback Page</a></h1>
     </div>
-
+<ul>
+{% for feedback in feedbacks %}
     <div>
-        <p>published: yesterday</p>
-        <h2><a href="">Nathan's First Feedback</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        
+        <h1><a href="">{{ feedback.mentor_name }}</a></h1>
+        <p>submitted: {{ feedback.published_date }}</p>
+        <p>{{ feedback.text|linebreaks }}</p>
     </div>
-
-    <div>
-        <p>published: today</p>
-        <h2><a href="">Nathan's 2nd Feedback</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
-
+{% endfor %}
 </body>
 </html>

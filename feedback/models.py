@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
-
+# Create your models here.
 class Feedback(models.Model):
     now = timezone.now()  
     SESSION1 = 'S1'
@@ -28,11 +27,10 @@ class Feedback(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-
+    
     def publish(self):
         self.published_date = timezone.now()
         self.save()
-
     def __str__(self):
         return self.mentor_name
-# Create your models here.
+  
