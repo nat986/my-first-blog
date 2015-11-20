@@ -57,10 +57,11 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 .notes {
-float:left;
-color: slategrey;
+    float:left;
+    color: slategrey;
 }
 .feedback_table {
+    width:60%;
     text-align: center;
-    
+    box-shadow: 2px 2px 2px;
 }

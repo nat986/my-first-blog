@@ -16,4 +16,7 @@
         <p><span class="notes">Feedback from Advisor:&nbsp;</span>{{ feedback.text|linebreaks }}</p>
         <p><span class="notes">Call notes:&nbsp;</span>{{ feedback.notes|linebreaks }}</p>
     </div>
+<form method="POST">{% csrf_token %}
+    <button type="submit"><a class="btn btn-default" href="{% url 'views.feedback_list'}"><span class="glyphicon glyphicon-ok"></span></a></button>
+    </form>
 {% endblock %}

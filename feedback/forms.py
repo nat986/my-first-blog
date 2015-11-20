@@ -5,4 +5,5 @@ class FeedbackForm(forms.ModelForm):
 
     class Meta:
         model = Feedback
-        fields = ('mentor_name', 'text', 'notes','current_session')
+        fields = ('mentor_name', 'text', 'notes','current_session',)
+        

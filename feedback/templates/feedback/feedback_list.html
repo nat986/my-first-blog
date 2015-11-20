@@ -1,7 +1,8 @@
 {% extends 'feedback/base.html' %}
 
 {% block content %}
-<table class="feedback_table" border="1" style='width:60%' box-shadow: '2px 2px 2px'>
+<p>Listed below are the currently outstanding mentor feedbacks:</p>
+<table class="feedback_table" border= "1">
             {% for feedback in feedbacks %}
                     <tr>
                         <td><a href="{% url 'feedback_detail' pk=feedback.pk %}">{{ feedback.mentor_name }}</a></td>

@@ -27,10 +27,14 @@ class Feedback(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+    isOutstanding = models.BooleanField(default=True)
     
     def publish(self):
         self.published_date = timezone.now()
         self.save()
     def __str__(self):
         return self.mentor_name
+    def checked(self):
+        self.isOutstanding = False
+        self.save()
   
