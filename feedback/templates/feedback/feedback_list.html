@@ -6,7 +6,7 @@
                     <div class="date">
                         <p>published: {{ feedback.published_date }}</p>
                     </div>
-                    <h1><a href="{% url 'feedback_detail' pk=feedback.pk %}">{{ feedback.mentor_name }}</a></h1>
+                    <h3><a href="{% url 'feedback_detail' pk=feedback.pk %}">{{ feedback.mentor_name }}</a></h3>
                     <p>{{ feedback.text|linebreaks }}</p>
                 </div>
             {% endfor %}

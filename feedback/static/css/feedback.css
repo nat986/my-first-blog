@@ -1,21 +1,23 @@
 <link href="http://fonts.googleapis.com/css?family=Arial&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 h1 a {
     color: #FCA205;
-    font-family: 'Arial';
+    font-family: 'Myriad Pro';
+    
 }
 body {
     padding-left: 15px;
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #3e3e3e;
     margin-top: 0;
+    font-size: 24pt;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 24pt;
     text-decoration: none;
 }
 
@@ -24,7 +26,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Arial', cursive;
+    font-family: 'Myriad Pro';
 }
 
 .date {
@@ -48,7 +50,7 @@ h1, h2, h3, h4 {
 }
 
 .feedback {
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 .feedback h1 a, .post h1 a:visited {
