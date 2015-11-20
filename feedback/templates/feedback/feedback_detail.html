@@ -1,0 +1,13 @@
+{% extends 'feedback/base.html' %}
+
+{% block content %}
+    <div class="feedback">
+        {% if feedback.published_date %}
+            <div class="date">
+                {{ feedback.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ feedback.mentor_name }}</h1>
+        <p>{{ feedback.text|linebreaks }}</p>
+    </div>
+{% endblock %}

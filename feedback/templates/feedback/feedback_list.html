@@ -1,21 +1,13 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Springboard Feedback</title>
-</head>
-<body>
-    <div>
-    <h1><a href="">Springboard Feedback Page</a></h1>
-    </div>
-<ul>
-{% for feedback in feedbacks %}
-    <div>
-        
-        <h1><a href="">{{ feedback.mentor_name }}</a></h1>
-        <p>submitted: {{ feedback.published_date }}</p>
-        <p>{{ feedback.text|linebreaks }}</p>
-    </div>
-{% endfor %}
-</body>
-</html>
+{% extends 'feedback/base.html' %}
+
+{% block content %}
+            {% for feedback in feedbacks %}
+                <div class="feedback">
+                    <div class="date">
+                        <p>published: {{ feedback.published_date }}</p>
+                    </div>
+                    <h1><a href="{% url 'feedback_detail' pk=feedback.pk %}">{{ feedback.mentor_name }}</a></h1>
+                    <p>{{ feedback.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
+{% endblock %}
