@@ -38,3 +38,15 @@ def feedback_edit(request, pk):
     else:
         form = FeedbackForm(instance=feedback)
     return render(request, 'feedback/feedback_edit.html', {'form': form})
+
+def feedback_draft_list(request):
+    posts = Feedback.objects.filter(published_date__isnull=True).order_by('created_date')
+    return render(request, 'feedback/feedback_draft_list.html', {'posts': posts})
+def feedback_publish(request, pk):
+    feedback = get_object_or_404(Feedback, pk=pk)
+    feedback.publish()
+    return redirect('feedback.views.feedback_detail', pk=pk)
+def feedback_remove(request, pk):
+    feedback = get_object_or_404(Feedback, pk=pk)
+    feedback.delete()
+    return redirect('feedback.views.feedback_list')

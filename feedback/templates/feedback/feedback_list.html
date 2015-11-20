@@ -1,13 +1,14 @@
 {% extends 'feedback/base.html' %}
 
 {% block content %}
+<table class="feedback_table" border="1" style='width:100%'>
             {% for feedback in feedbacks %}
-                <div class="feedback">
-                    <div class="date">
-                        <p>published: {{ feedback.published_date }}</p>
-                    </div>
-                    <h3><a href="{% url 'feedback_detail' pk=feedback.pk %}">{{ feedback.mentor_name }}</a></h3>
-                    <p>{{ feedback.text|linebreaks }}</p>
-                </div>
+                    <tr>
+                        <td><a href="{% url 'feedback_detail' pk=feedback.pk %}">{{ feedback.mentor_name }}</a></td>
+                        <td>{{ feedback.published_date }}</td>
+                        <td>{{ feedback.text|linebreaks }}</td>
+                        <td>{{ feedback.notes}}</td>
+                    </tr>
             {% endfor %}
+</table>
 {% endblock %}

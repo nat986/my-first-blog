@@ -1,0 +1,11 @@
+{% extends 'feedback/base.html' %}
+
+{% block content %}
+    {% for feedback in feedbacks %}
+        <div class="feedback">
+            <p class="date">created: {{ feedback.created_date|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'feedback.views.post_detail' pk=feedback.pk %}">{{ feedback.title }}</a></h1>
+            <p>{{ feedback.text|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
